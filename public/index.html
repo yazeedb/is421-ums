@@ -2,13 +2,36 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>User Management System</title>
 
 	<link rel="stylesheet" href="assets/libs/bootstrap/dist/css/bootstrap.min.css">
 	<link rel="stylesheet" href="assets/style/style.css">
 </head>
 <body>
-	<h1>Hello World</h1>
+	<nav class="navbar navbar-default">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<a class="navbar-brand">UMS</a>
+			</div>
+			<div>
+				<ul class="nav navbar-nav">
+					<li>
+						<a><input type="text" name="username" placeholder="username"></a>
+					</li>
+					<li>
+						<a><input type="text" name="password" placeholder="password"></a>
+					</li>
+					<li>
+						<a><button class="btn btn-info">Sign in</button></a>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+	<div class="container-fluid">
+		<div ui-view></div>
+	</div>
 	<script src="assets/libs/angular/angular.js"></script>
 </body>
 </html>
