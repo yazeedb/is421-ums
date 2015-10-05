@@ -14,7 +14,8 @@
 
 			.state('manage', {
 				url: '/manage',
-				templateUrl: 'manage.html'
+				templateUrl: 'views/manage.html',
+				controller: 'manageCtrl'
 			});
 
 		$urlRouterProvider.otherwise('/');
