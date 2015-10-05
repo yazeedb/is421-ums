@@ -16,6 +16,11 @@
 				url: '/manage',
 				templateUrl: 'views/manage.html',
 				controller: 'manageCtrl'
+			})
+
+			.state('forgotUsername', {
+				url: '/forgotUsername',
+				templateUrl: 'views/forgotUsername.html'
 			});
 
 		$urlRouterProvider.otherwise('/');

@@ -13,3 +13,22 @@ div.manage-buttons.row {
 div.manage-buttons.row button {
   margin: 0 15px;
 }
+div.forgot-username {
+  margin: 0 auto;
+  padding: 10px;
+  width: 40%;
+  border: solid 1px black;
+}
+div.forgot-username div {
+  text-align: center;
+}
+div.forgot-username div hr {
+  background-color: black;
+  height: 1px;
+}
+div.forgot-username .form-control {
+  margin: 20px 0 10px 0;
+}
+div.forgot-username .glyphicon.glyphicon-user {
+  font-size: 32px;
+}
