@@ -19,6 +19,11 @@
   "dependencies": {
     "body-parser": "^1.14.1",
     "express": "^4.13.3",
+    "gulp": "^3.9.0",
     "mysql": "^2.9.0"
+  },
+  "devDependencies": {
+    "gulp-less": "^3.0.3",
+    "gulp-nodemon": "^2.0.4"
   }
 }
