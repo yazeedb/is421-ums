@@ -1,0 +1,19 @@
+{
+  "name": "user_management_system",
+  "version": "1.0.0",
+  "description": "`A user management system with sign up, authentication, admins, and masquerading.`",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yazeedb/is421-ums.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/yazeedb/is421-ums/issues"
+  },
+  "homepage": "https://github.com/yazeedb/is421-ums#readme"
+}
