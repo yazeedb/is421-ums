@@ -1,0 +1,2 @@
+!function(){angular.module("ums",["ui.router"])}();
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImFwcC5tb2R1bGUuanMiXSwibmFtZXMiOlsiYW5ndWxhciIsIm1vZHVsZSJdLCJtYXBwaW5ncyI6IkNBQUEsV0FDQUEsUUFBQUMsT0FBQSxPQUFBIiwiZmlsZSI6Im1haW4uanMiLCJzb3VyY2VzQ29udGVudCI6WyIoZnVuY3Rpb24gKCkge1xuXHRhbmd1bGFyLm1vZHVsZSgndW1zJywgWyd1aS5yb3V0ZXInXSk7XG59KCkpOyJdLCJzb3VyY2VSb290IjoiL3NvdXJjZS8ifQ==

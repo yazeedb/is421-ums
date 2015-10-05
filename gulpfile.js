@@ -24,6 +24,19 @@ gulp.task('concatJSAssets', function () {
 			.pipe(gulp.dest('public/assets/libs'));
 });
 
+gulp.task('concatAndMinifyJS', function () {
+	return gulp.src([allAngularModules, jsPath])
+			.pipe(sourcemaps.init())
+			.pipe(concat('main.js'))
+			.pipe(uglify())
+			.pipe(sourcemaps.write())
+			.pipe(gulp.dest('./public'));
+});
+
+gulp.task('watchConcatAndMinifyJS', function () {
+	gulp.watch([jsPath], ['concatAndMinifyJS']);
+});
+
 gulp.task('compileLess', function () {
 	return gulp.src(cssPath + '/style.less')
 		.pipe(less())
