@@ -15,7 +15,7 @@
 			</tr>
 		</thead>
 		<tbody>
-			<tr ng-repeat="user in users">
+			<tr ng-repeat="user in users track by $index">
 				<td><input type="checkbox"></td>
 				<td>{{ $index + 1}}</td>
 				<td>{{ user.username }}</td>
