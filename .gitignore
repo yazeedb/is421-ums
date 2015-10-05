@@ -30,6 +30,9 @@ node_modules
 #Bower components
 public/assets/libs
 
+public/assets/libs/libs.js
+public/main.js
+
 config.js
 flowcharts
 flowchart.png
