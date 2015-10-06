@@ -43,6 +43,11 @@
 				templateUrl: 'views/resetPassword.html'
 			})
 
+			.state('resetPasswordSuccess', {
+				url: '/resetPasswordSuccess',
+				templateUrl: 'views/resetPasswordSuccess.html'
+			})
+
 
 
 		//$urlRouterProvider.otherwise('/');
