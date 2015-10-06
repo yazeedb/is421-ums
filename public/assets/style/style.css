@@ -1,27 +1,37 @@
+body{
+
+}
+
 /*helper classes*/
-.remove-padding{
-  padding: 0;
-}
+/*margins*/
+  .center-div{
+    margin:0 auto;
+    float: none;
+  }
+/*padding*/
+  .remove-padding{
+    padding: 0;
+  }
 
-.remove-padding-bottom{
-  padding-bottom: 0;
-}
+  .remove-padding-bottom{
+    padding-bottom: 0;
+  }
 
-.remove-padding-top{
-  padding-top: 0;
-}
+  .remove-padding-top{
+    padding-top: 0;
+  }
 
-.remove-padding-left{
-  padding-left: 0;
-}
+  .remove-padding-left{
+    padding-left: 0;
+  }
 
-.remove-padding-right{
-  padding-right: 0;
-}
+  .remove-padding-right{
+    padding-right: 0;
+  }
 
 /*main navigation bar*/
 #main-nav{
-
+  margin-bottom:50px;
 }
 
 #main-nav #login-container{
@@ -52,18 +62,19 @@ div.manage-buttons.row {
 div.manage-buttons.row button {
   margin: 0 15px;
 }
+
+/*forgot username page*/
 div.forgot-username {
   margin: 0 auto;
-  padding: 10px;
-  width: 40%;
-  border: solid 1px black;
+
+  /*border: solid 1px black;*/
 }
 div.forgot-username div {
   text-align: center;
 }
 div.forgot-username div hr {
-  background-color: black;
-  height: 1px;
+/*  background-color: black;
+  height: 1px;*/
 }
 div.forgot-username .form-control {
   margin: 20px 0 10px 0;
@@ -72,8 +83,9 @@ div.forgot-username .glyphicon.glyphicon-user {
   font-size: 32px;
 }
 
+/*nav forgot links*/
 div#forgot-links a{
-  padding-left: 15px;
+  padding: 0px 0px 15px 15px;
   width: 180px;
   display: inline-block;
 }
