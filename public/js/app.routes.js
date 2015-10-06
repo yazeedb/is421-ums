@@ -38,6 +38,11 @@
 				templateUrl: 'views/forgotPassword.html'
 			})
 
+			.state('forgotUsernameSuccess', {
+				url: '/forgotPasswordSuccess',
+				templateUrl: 'views/forgotPasswordSuccess.html'
+			})
+
 			.state('forgotPasswordSuccess', {
 				url: '/forgotPasswordSuccess',
 				templateUrl: 'views/forgotPasswordSuccess.html'
