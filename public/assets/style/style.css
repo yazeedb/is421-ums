@@ -1,3 +1,42 @@
+/*helper classes*/
+.remove-padding{
+  padding: 0;
+}
+
+.remove-padding-bottom{
+  padding-bottom: 0;
+}
+
+.remove-padding-top{
+  padding-top: 0;
+}
+
+.remove-padding-left{
+  padding-left: 0;
+}
+
+.remove-padding-right{
+  padding-right: 0;
+}
+
+/*main navigation bar*/
+#main-nav{
+
+}
+
+#main-nav #login-container{
+
+}
+
+#main-nav #login-container #login-input{
+  
+}
+
+#main-nav #login-container ul#login-input li a{
+  padding-bottom: 0;
+}
+
+
 div.manage-search.row {
   padding: 10px 0;
 }
@@ -31,4 +70,10 @@ div.forgot-username .form-control {
 }
 div.forgot-username .glyphicon.glyphicon-user {
   font-size: 32px;
+}
+
+div#forgot-links a{
+  padding-left: 15px;
+  width: 180px;
+  display: inline-block;
 }
