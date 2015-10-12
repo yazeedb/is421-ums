@@ -8,26 +8,35 @@
 	<title>User Management System</title>
 
 	<link rel="stylesheet" href="assets/libs/bootstrap/dist/css/bootstrap.min.css">
+	<link rel="stylesheet" href="assets/libs/components-font-awesome/css/font-awesome.min.css">
 	<link rel="stylesheet" href="assets/style/style.css">
 </head>
 <body>
-	<nav class="navbar navbar-default">
+	<nav id="main-nav" class="navbar navbar-default" ng-controller="loginCtrl">
 		<div class="container-fluid">
 			<div class="navbar-header">
-				<a class="navbar-brand" href="/">UMS</a>
+				<a class="navbar-brand" href="/">{{formData}}UMS</a>
 			</div>
-			<div>
-				<ul class="nav navbar-nav">
+			<div id="login-container" class="pull-right">
+				<ul id="login-input" class="nav navbar-nav">
 					<li>
-						<a><input type="text" name="username" placeholder="username"></a>
+						<a>
+							<input type="text" name="username" ng-model="formData.username" placeholder="username">
+						</a>
 					</li>
 					<li>
-						<a><input type="text" name="password" placeholder="password"></a>
+						<a><input type="password" name="password" ng-model="formData.password" placeholder="password"></a>
 					</li>
 					<li>
-						<a><button class="btn btn-info">Sign in</button></a>
+						<a><button class="btn btn-info" ng-click="login()">		Sign in
+						</button></a>
 					</li>
 				</ul>
+				<div id="forgot-links">
+					<a href="/forgotUsername" sref="forgotUsername">forgot username?</a>
+					<a href="/forgotPassword" sref="forgotPassword">forgot password?</a>
+					<a href="/signup" sref="signup">Sign Up</a>
+				</div>
 			</div>
 		</div>
 	</nav>

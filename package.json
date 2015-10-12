@@ -5,7 +5,7 @@
   "main": "server.js",
   "scripts": {
     "postinstall": "node_modules/bower/bin/bower install",
-    "startgulp": "node_modules/gulp/bin/gulp.js"
+    "startGulp": "node_modules/gulp/bin/gulp.js"
   },
   "repository": {
     "type": "git",
