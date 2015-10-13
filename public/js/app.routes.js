@@ -18,7 +18,7 @@
 			})
 
 			.state('manage', {
-				url: '/manage',
+				url: '/admin',
 				templateUrl: 'views/manage.html',
 				controller: 'manageCtrl'
 			})
