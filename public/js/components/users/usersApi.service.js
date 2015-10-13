@@ -11,7 +11,7 @@
 			postUser: postUser,
 			putUser: putUser,
 			deleteUser: deleteUser,
-			getCheckedUsers: getCheckedUsers
+			actionOnUsers: actionOnUsers
 		};
 
 		var usersApiPath = '/api/users/';
@@ -39,14 +39,14 @@
 			return $http.delete(fullApiPath);
 		}
 
-		function getCheckedUsers (arrayOfUsers) {
+		function actionOnUsers (arrayOfUsers, action) {
 			var i = 0,
 				allUsers = arrayOfUsers.length,
 				currentUser;
 
 			for (i; i < allUsers; i++) {
 				currentUser = arrayOfUsers[i];
-				console.log(currentUser);
+				action(currentUser);
 			}
 		}
 
