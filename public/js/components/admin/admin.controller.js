@@ -3,12 +3,15 @@
 		.module('admin')
 		.controller('manageCtrl', manageCtrl);
 
-		manageCtrl.$inject = ['$scope', 'fakeUsers', 'adminControls'];
+		manageCtrl.$inject = ['$scope', 'fakeUsers', 'adminControls', '$uibModal', '$http'];
 
-	function manageCtrl ($scope, fakeUsers, adminControls) {
+	function manageCtrl ($scope, fakeUsers, adminControls, $uibModal, $http) {
 		$scope.users = [];
+		$scope.newUser = {};
 
 		$scope.selectAllUsers = selectAllUsers;
+		$scope.addUser = addUser;
+		$scope.saveUser = saveUser;
 		$scope.changeUserRole = changeUserRole;
 		$scope.deleteUser = deleteUser;
 
@@ -22,8 +25,18 @@
 			});
 		}
 
-		function addUser () {
-			
+		function addUser (newUser) {
+			$uibModal.open({
+				templateUrl: 'js/components/admin/views/addUser.html',
+				controller: 'manageCtrl'
+			});
+		}
+
+		function saveUser () {
+			$http.post('/api/users', $scope.newUser)
+				.then(function (res) {
+					console.log(res);
+				});
 		}
 
 		function changeUserRole () {

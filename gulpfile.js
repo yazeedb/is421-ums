@@ -14,6 +14,8 @@ var relativeJSAssets = [
 	'bootstrap/dist/js/bootstrap.min.js',
 	'angular/angular.js',
 	'angular-ui-router/release/angular-ui-router.js',
+	'angular-bootstrap/ui-bootstrap.min.js',
+	'angular-bootstrap/ui-bootstrap-tpls.min.js',
 	'sweetalert/dist/sweetalert.min.js',
 	'toastr/toastr.min.js'
 ];

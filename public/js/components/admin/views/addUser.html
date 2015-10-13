@@ -1,0 +1,50 @@
+<div class="createEvent-modal">
+  <div class="modal-header">
+    <h4 class="modal-title">Add User {{newUser}}</h4>
+  </div>
+  <div class="modal-body">
+    <div class="row">
+      <div class="col-md-6">
+        <p class="input-group">
+        	<label>
+	      		<span>Admin:</span>
+	            <input type="checkbox" ng-model="newUser.admin">
+	        </label>
+          <label>
+            <span>First name:</span>
+            <span class="required-field text-danger">*</span>
+            <input type="text" class="form-control" ng-model="newUser.firstName">
+          </label>
+
+          <label>
+            <span>Last name:</span>
+            <span class="required-field text-danger">*</span>
+            <input type="text" class="form-control" ng-model="newUser.lastName">
+          </label>
+
+          <label>
+            <span>Username:</span>
+            <span class="required-field text-danger">*</span>
+            <input type="text" class="form-control" ng-model="newUser.username">
+          </label>
+
+          <label>
+            <span>Email:</span>
+            <span class="required-field text-danger">*</span>
+            <input type="text" class="form-control" ng-model="newUser.email">
+          </label>
+
+          <label>
+            <span>Password</span>
+            <span class="required-field text-danger">*</span>
+            <input type="text" class="form-control" ng-model="newUser.password">
+          </label>
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal-footer">
+    <button class="btn btn-primary" ng-click="saveUser()">Save</button>
+  </div>
+</div>

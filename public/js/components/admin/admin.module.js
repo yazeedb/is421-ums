@@ -1,4 +1,4 @@
 (function () {
 	angular
-		.module('admin', []);
+		.module('admin', ['ui.bootstrap']);
 }());
