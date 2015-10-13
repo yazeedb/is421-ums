@@ -22,19 +22,8 @@
 			});
 		}
 
-		function getSelectedUsers () {
-			var selectedUsers = [];
-
-			adminControls.actionOnUsers($scope.users, function (user) {
-				if (user.selected)
-					selectedUsers.push(user);
-			});
-
-			return selectedUsers;
-		}
-
 		function changeUserRole () {
-			var usersToChange = getSelectedUsers();
+			var usersToChange = adminControls.getSelectedUsers($scope.users);
 
 			if (usersToChange.length) {
 				adminControls.actionOnUsers(usersToChange, function (user) {
@@ -46,7 +35,7 @@
 		}
 
 		function deleteUser () {
-			var usersToDelete = getSelectedUsers();
+			var usersToDelete = adminControls.getSelectedUsers($scope.users);
 
 			if (usersToDelete.length) {
 				var swalOptions = {

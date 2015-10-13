@@ -5,7 +5,8 @@
 
 	function adminControls () {
 		var factory = {
-			actionOnUsers: actionOnUsers
+			actionOnUsers: actionOnUsers,
+			getSelectedUsers: getSelectedUsers
 		};
 
 		function actionOnUsers (listOfUsers, action) {
@@ -18,6 +19,17 @@
 
 				action(currentUser);
 			}
+		}
+
+		function getSelectedUsers (listOfUsers) {
+			var selectedUsers = [];
+
+			this.actionOnUsers(listOfUsers, function (user) {
+				if (user.selected)
+					selectedUsers.push(user);
+			});
+
+			return selectedUsers;
 		}
 
 		return factory;
