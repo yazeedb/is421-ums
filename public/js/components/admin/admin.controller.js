@@ -34,7 +34,7 @@
 					user.admin = !user.admin;
 				});
 
-				toastr.success('Success', 'Roles changed');
+				toastr.success('Roles changed', 'Success');
 			}
 		}
 
@@ -55,7 +55,7 @@
 				's?' : '?'; 
 				
 				swal(swalOptions, function () {
-					toastr.success('Success!', 'Users deleted');
+					toastr.success('Users deleted!', 'Success');
 				});
 			}
 		}
