@@ -17,7 +17,6 @@
     "angular": "~1.4.7",
     "angular-ui-router": "~0.2.15",
     "bootstrap": "~3.3.5",
-    "components-font-awesome": "~4.4.0",
-    "faker": "~0.0.2"
+    "components-font-awesome": "~4.4.0"
   }
 }
