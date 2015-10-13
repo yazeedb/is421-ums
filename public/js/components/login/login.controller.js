@@ -17,8 +17,8 @@
 					console.log(res);
 				});
 
-			//redirect
+			//redirect on login success
 			$state.go('manage');
-		}
+		}//end login
 	}
 }());

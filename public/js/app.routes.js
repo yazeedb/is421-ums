@@ -25,12 +25,14 @@
 
 			.state('forgotUsername', {
 				url: '/forgotUsername',
-				templateUrl: 'views/forgotUsername.html'
+				templateUrl: 'views/forgotUsername.html',
+				controller: 'forgotCtrl'
 			})
 
 			.state('forgotUsernameSuccess', {
 				url: '/forgotUsernameSuccess',
-				templateUrl: 'views/forgotUsernameSuccess.html'
+				templateUrl: 'views/forgotUsernameSuccess.html',
+				controller: 'forgotCtrl'
 			})
 
 			.state('forgotPassword', {
