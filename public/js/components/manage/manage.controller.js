@@ -9,6 +9,7 @@
 		$scope.users = [];
 
 		$scope.selectAllUsers = selectAllUsers;
+		$scope.changeUserRole = changeUserRole;
 		$scope.deleteUser = deleteUser;
 
 		for (var i = 0; i < 10; i++) {
@@ -30,6 +31,18 @@
 			});
 
 			return selectedUsers;
+		}
+
+		function changeUserRole () {
+			var usersToChange = getSelectedUsers();
+
+			if (usersToChange.length) {
+				usersApi.actionOnUsers(usersToChange, function (user) {
+					user.admin = !user.admin;
+				});
+
+				toastr.success('Success', 'Roles changed');
+			}
 		}
 
 		function deleteUser () {
