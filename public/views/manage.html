@@ -44,7 +44,7 @@
 				<td>{{ user.firstName }}</td>
 				<td>{{ user.lastName }}</td>
 				<td>{{ user.admin | adminStatus}}</td>
-				<td>{{ user.dateJoined }}</td>
+				<td>{{ user.dateJoined | friendlyDate}}</td>
 			</tr>
 		</tbody>
 	</table>
