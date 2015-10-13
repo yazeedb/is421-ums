@@ -22,6 +22,10 @@
 			});
 		}
 
+		function addUser () {
+			
+		}
+
 		function changeUserRole () {
 			var usersToChange = adminControls.getSelectedUsers($scope.users);
 
