@@ -1,3 +1,3 @@
 (function () {
-	angular.module('ums', ['ui.router', 'users', 'login','forgot']);
+	angular.module('ums', ['ui.router', 'users', 'admin', 'login','forgot']);
 }());

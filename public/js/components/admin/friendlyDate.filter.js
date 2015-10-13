@@ -1,6 +1,6 @@
 (function () {
 	angular
-		.module('ums')
+		.module('admin')
 		.filter('friendlyDate', friendlyDate);
 
 	function friendlyDate () {

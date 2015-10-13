@@ -55,6 +55,7 @@
 				templateUrl: 'views/resetPasswordSuccess.html'
 			});
 
+		$urlRouterProvider.otherwise('/');
 		$locationProvider.html5Mode(true);
 	}
 }());

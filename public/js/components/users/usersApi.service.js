@@ -10,8 +10,7 @@
 			getUser: getUser,
 			postUser: postUser,
 			putUser: putUser,
-			deleteUser: deleteUser,
-			actionOnUsers: actionOnUsers
+			deleteUser: deleteUser
 		};
 
 		var usersApiPath = '/api/users/';
@@ -37,17 +36,6 @@
 		function deleteUser (userId) {
 			var fullApiPath = usersApiPath + userId;
 			return $http.delete(fullApiPath);
-		}
-
-		function actionOnUsers (arrayOfUsers, action) {
-			var i = 0,
-				allUsers = arrayOfUsers.length,
-				currentUser;
-
-			for (i; i < allUsers; i++) {
-				currentUser = arrayOfUsers[i];
-				action(currentUser);
-			}
 		}
 
 		return factory;

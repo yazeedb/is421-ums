@@ -1,11 +1,11 @@
 (function () {
 	angular
-		.module('ums')
+		.module('admin')
 		.controller('manageCtrl', manageCtrl);
 
-		manageCtrl.$inject = ['$scope', 'fakeUsers', 'usersApi'];
+		manageCtrl.$inject = ['$scope', 'fakeUsers', 'adminControls'];
 
-	function manageCtrl ($scope, fakeUsers, usersApi) {
+	function manageCtrl ($scope, fakeUsers, adminControls) {
 		$scope.users = [];
 
 		$scope.selectAllUsers = selectAllUsers;
@@ -17,7 +17,7 @@
 		}
 
 		function selectAllUsers () {
-			usersApi.actionOnUsers($scope.users, function (user) {
+			adminControls.actionOnUsers($scope.users, function (user) {
 				user.selected = $scope.allUsersSelected;
 			});
 		}
@@ -25,7 +25,7 @@
 		function getSelectedUsers () {
 			var selectedUsers = [];
 
-			usersApi.actionOnUsers($scope.users, function (user) {
+			adminControls.actionOnUsers($scope.users, function (user) {
 				if (user.selected)
 					selectedUsers.push(user);
 			});
@@ -37,7 +37,7 @@
 			var usersToChange = getSelectedUsers();
 
 			if (usersToChange.length) {
-				usersApi.actionOnUsers(usersToChange, function (user) {
+				adminControls.actionOnUsers(usersToChange, function (user) {
 					user.admin = !user.admin;
 				});
 
