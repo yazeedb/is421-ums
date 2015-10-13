@@ -19,6 +19,7 @@
     "bootstrap": "~3.3.5",
     "components-font-awesome": "~4.4.0",
     "sweetalert": "~1.1.0",
-    "toastr": "~2.1.2"
+    "toastr": "~2.1.2",
+    "angular-bootstrap": "~0.14.1"
   }
 }
