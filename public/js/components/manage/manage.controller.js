@@ -7,10 +7,18 @@
 
 	function manageCtrl ($scope, fakeUsers) {
 		$scope.users = [];
-		var i;
 
-		for (i = 0; i < 10; i++) {
+		$scope.selectAllUsers = selectAllUsers;
+
+		for (var i = 0; i < 10; i++) {
 			$scope.users.push(fakeUsers.makeUser());
+		}
+
+		function selectAllUsers () {
+			for (var i = 0; i < $scope.users.length; i++) {
+				var currentUser = $scope.users[i];
+				currentUser.checked = !currentUser.checked;
+			}
 		}
 	}
 }());

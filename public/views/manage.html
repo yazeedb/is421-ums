@@ -24,7 +24,7 @@
 	</div>
 	<table class="table table-bordered table-hover">
 		<thead>
-				<th><input type="checkbox"></th>
+				<th><input type="checkbox" ng-model="selectAllUser" ng-change="selectAllUsers()"></th>
 				<th>No.</th>
 				<th>Username</th>
 				<th>Email</th>
@@ -37,7 +37,7 @@
 
 		<tbody>
 			<tr ng-repeat="user in users track by $index">
-				<td><input type="checkbox"></td>
+				<td><input type="checkbox" ng-checked="user.checked"></td>
 				<td>{{ $index + 1}}</td>
 				<td>{{ user.username }}</td>
 				<td>{{ user.email }}</td>

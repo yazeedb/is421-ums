@@ -13,7 +13,8 @@
 				firstName: faker.name.firstName(),
 				lastName: faker.name.lastName(),
 				admin: (Math.random() > 0.65),
-				dateJoined: faker.date.past()
+				dateJoined: faker.date.past(),
+				selected: false
 			};
 
 			user.email = faker.internet.email(user.firstName, user.lastName);
