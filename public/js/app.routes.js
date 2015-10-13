@@ -31,8 +31,8 @@
 
 			.state('forgotUsernameSuccess', {
 				url: '/forgotUsernameSuccess',
-				templateUrl: 'views/forgotUsernameSuccess.html',
-				controller: 'forgotCtrl'
+				templateUrl: 'views/forgotUsernameSuccess.html'
+				
 			})
 
 			.state('forgotPassword', {
