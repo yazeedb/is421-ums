@@ -3,74 +3,14 @@
 		.module('ums')
 		.controller('manageCtrl', manageCtrl);
 
-		manageCtrl.$inject = ['$scope'];
+		manageCtrl.$inject = ['$scope', 'fakeUsers'];
 
-	function manageCtrl ($scope) {
-		$scope.users = [
-			{
-				username: 'ybzadough',
-				email: 'ybzadough@gmail.com',
-				firstName: 'Yazeed',
-				lastName: 'Bzadough',
-				admin: 'true',
-				dateJoined: '10/4/2015'	
-			},
-			{
-				username: 'ybzadough',
-				email: 'ybzadough@gmail.com',
-				firstName: 'Yazeed',
-				lastName: 'Bzadough',
-				admin: 'true',
-				dateJoined: '10/4/2015'	
-			},
-			{
-				username: 'ybzadough',
-				email: 'ybzadough@gmail.com',
-				firstName: 'Yazeed',
-				lastName: 'Bzadough',
-				admin: 'true',
-				dateJoined: '10/4/2015'	
-			},
-			{
-				username: 'ybzadough',
-				email: 'ybzadough@gmail.com',
-				firstName: 'Yazeed',
-				lastName: 'Bzadough',
-				admin: 'true',
-				dateJoined: '10/4/2015'	
-			},
-			{
-				username: 'ybzadough',
-				email: 'ybzadough@gmail.com',
-				firstName: 'Yazeed',
-				lastName: 'Bzadough',
-				admin: 'true',
-				dateJoined: '10/4/2015'	
-			},
-			{
-				username: 'ybzadough',
-				email: 'ybzadough@gmail.com',
-				firstName: 'Yazeed',
-				lastName: 'Bzadough',
-				admin: 'true',
-				dateJoined: '10/4/2015'	
-			},
-			{
-				username: 'ybzadough',
-				email: 'ybzadough@gmail.com',
-				firstName: 'Yazeed',
-				lastName: 'Bzadough',
-				admin: 'true',
-				dateJoined: '10/4/2015'	
-			},
-			{
-				username: 'ybzadough',
-				email: 'ybzadough@gmail.com',
-				firstName: 'Yazeed',
-				lastName: 'Bzadough',
-				admin: 'true',
-				dateJoined: '10/4/2015'	
-			}
-		];
+	function manageCtrl ($scope, fakeUsers) {
+		$scope.users = [];
+		var i;
+
+		for (i = 0; i < 10; i++) {
+			$scope.users.push(fakeUsers.makeUser());
+		}
 	}
 }());

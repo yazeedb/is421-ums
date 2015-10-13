@@ -1,6 +1,6 @@
 (function () {
 	angular
-		.module('users', [])
+		.module('users')
 		.factory('usersApi', usersApi);
 
 	usersApi.$inject = ['$http'];
