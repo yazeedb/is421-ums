@@ -14,7 +14,8 @@
 
 			.state('signup', {
 				url: '/signup',
-				templateUrl: 'views/signup.html'
+				templateUrl: 'views/signup.html',
+				controller: 'forgotCtrl'
 			})
 
 			.state('manage', {
@@ -37,7 +38,8 @@
 
 			.state('forgotPassword', {
 				url: '/forgotPassword',
-				templateUrl: 'views/forgotPassword.html'
+				templateUrl: 'views/forgotPassword.html',
+				controller: 'forgotCtrl'
 			})
 
 			.state('forgotPasswordSuccess', {

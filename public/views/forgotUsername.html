@@ -13,9 +13,9 @@
 
 <div class="panel-body">
 <form name="formData">
-	<input name="emailField" ng-model="formData.email"   class="form-control" placeholder="Your email"  >
-
-	<h1>{{formData.email}}</h1>
+	<input name="emailField" ng-model="formData.email"   class="form-control" placeholder="Your email" required >
+<!-- 
+	<h1>{{formData.email}}</h1> -->
 
 	<!-- <div class="alert alert-danger" role="alert" ng-show="formData.emailField.$error.required">
 		Please Enter a Username
@@ -25,6 +25,7 @@
 		Please Enter a Username
 	</div>
 	
+			{{formData.errors}}
 	<div>
 		<button class="btn btn-block btn-primary" ng-click="forgotUsername()">Submit</button>
 	</div>

@@ -9,14 +9,41 @@
 		//make sure its injecting	
 		console.log("forgot controller injected");
 
+		$scope.formData = {};
 
 		$scope.forgotUsername = function () {
-			if(!formData.email){
-				
+
+			//min length 8 chars
+			if($scope.formData.email){
+				$state.go('forgotUsernameSuccess');
 			}
-		}
-		
-	}
+			else{
+
+			}
+		} //end forgotUsername
+
+		$scope.forgotPassword = function () {
+
+			//min length 8 chars
+			if($scope.formData.username){
+				$state.go('forgotPasswordSuccess');
+			}
+			else{
+
+			}
+		} //end forgotUsername
+
+
+		$scope.signUp = function () {
+
+			$state.go('forgotUsernameSuccess');
+			
+		} //end forgotUsername
+
+
+
+
+	} //end forgot ctrl
 
 }());
 
