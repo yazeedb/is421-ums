@@ -10,15 +10,6 @@
 		console.log("forgot controller injected");
 
 
-
-
-		 $http.post('http://anaik.us:8500/rest/user/login',{username:'auk2',password:'huknjk'}).then(function(res){
-        console.log(res.data);
-      })
-
-
-
-
 		$scope.forgotUsername = function () {
 			if(!formData.email){
 				
