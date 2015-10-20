@@ -1,11 +1,16 @@
 (function () {
 	angular
 		.module('signup')
-		.controller('signupCtrl', loginCtrl);
+		.controller('signupCtrl', signupCtrl);
 
-	loginCtrl.$inject = ['$scope'];
+	signupCtrl.$inject = ['$scope'];
 
-	function loginCtrl ($scope) {
+
+	function signupCtrl ($scope) {
+
+			console.log("signup controller injected");
+
+
 		$scope.formData = {};
 
 		$scope.signup = signup;
@@ -17,6 +22,6 @@
 		// 			console.log(res);
 		// 		});
 		// }//end function signup()
-		
-	}//end loginCtrl
+
+	}//end signupCtrl
 }());
