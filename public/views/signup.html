@@ -6,32 +6,55 @@
 			<label for="firstname">First Name</label>
 			<input ng-model='firstName' name='firstName' type="text" class="form-control" required> 
 			<div class="alert alert-danger" role="alert" ng-if="signupForm.firstName.$touched && !firstName"><span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
-				Please enter an first name.
+				Please enter a first name.
 			</div>
 			
 
 
 			<label for="lastname">LastName</label>
-			<input id="lastname"  type="text" class="form-control" aria-describedby="basic-addon1">
+			<input ng-model='lastName' id="lastName" name="lastName"  type="text" class="form-control" aria-describedby="basic-addon1">
+			<div class="alert alert-danger" role="alert" ng-if="signupForm.lastName.$touched && !lastName"><span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+				Please enter a last name.
+			</div>
 
 			<label for="email">Email</label>
-			<input id="email"  type="email" class="form-control" aria-describedby="basic-addon1">
+			<input ng-model='email' id="email" name="email" type="email" class="form-control" aria-describedby="basic-addon1">
+			<div class="alert alert-danger" role="alert" ng-if="signupForm.email.$touched && !email"><span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+				Please enter a valid email.
+			</div>
 
 			<label for="password">Password</label>
-			<input id="password"  type="password" class="form-control" aria-describedby="basic-addon1">
+			<input id="password" name="password" ng-model="password" type="password" class="form-control" aria-describedby="basic-addon1" ng-minlength="6" placeholder="6 - 12 characters" >
+			<div class="alert alert-danger" role="alert" ng-if="signupForm.password.$touched && !password"><span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+				Please enter a password.
+			</div>
 
 			<label for="confirmPassword">Confirm Password</label>
-			<input id="confirmPassword"  type="Password" class="form-control" aria-describedby="basic-addon1">
+			<input id="confirmPassword" name="confirmPassword" ng-model="confirmPassword" type="password" class="form-control" aria-describedby="basic-addon1" ng-minlength="6" placeholder="6 - 12 characters" >
+			<div class="alert alert-danger" role="alert" ng-if="signupForm.confirmPassword.$touched && !confirmPassword"><span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+				Please enter a password.
+			</div>
+
+
 			
 		</div>
+
+
 		<div class="col-sm-6">
 			<label for="username">Username</label>
-			<input id="username"  type="text" class="form-control" aria-describedby="basic-addon1">
+			<input id="username" name="username" ng-model="username" type="text" class="form-control" aria-describedby="basic-addon1" placeholder="6 - 12 characters" ng-minlength="6">
+		<div class="alert alert-danger" role="alert" ng-if="signupForm.username.$touched && !username"><span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+				Please enter a Username.
+
+			</div>
 
 
 		<div >
 			<label>Date of Birth</label>
-			<input type="date" class="form-control" id="exampleInputDOB1">
+			<input name="dob"  ng-model="dob"  type="date" class="form-control" id="exampleInputDOB1">
+		</div>
+		<div class="alert alert-danger" role="alert" ng-if="signupForm.dob.$touched && !dob"><span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+				Please enter a date of birth.
 		</div>
 
 		<div>
@@ -43,8 +66,15 @@
 
 			
 			<label for="zipcode">zipcode</label>
-			<input id="zipcode"  type="text" class="form-control" aria-describedby="basic-addon1">
+			<input id="zipcode" name="zipcode" ng-model="zipcode"  type="text" class="form-control" aria-describedby="basic-addon1" ng-minlength="5">
+
+			<div class="alert alert-danger" role="alert" ng-if="signupForm.zipcode.$touched && !zipcode"><span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+				Please enter a valid zipcode.
 		</div>
+		</div>
+		
+
+
 
 <!-- 		  <div class="checkbox">
 		    <label>
