@@ -16,6 +16,8 @@
 
 		$scope.title = "signup";
 
+		$scope.passwordErrors = false;
+
 		// function signup () {
 		// 	console.log('logging in');
 		// 	signupService.signup($scope.formData)

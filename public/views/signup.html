@@ -35,6 +35,10 @@
 				Please enter a password.
 			</div>
 
+			<div class="alert alert-danger" role="alert" ng-if="signupForm.confirmPassword !== signupForm.password "><span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+				Passwords do not match.
+			</div>
+
 
 			
 		</div>
@@ -70,7 +74,7 @@
 
 			<div class="alert alert-danger" role="alert" ng-if="signupForm.zipcode.$touched && !zipcode"><span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
 				Please enter a valid zipcode.
-		</div>
+			</div>
 		</div>
 		
 
