@@ -15,11 +15,8 @@
 			.state('signup', {
 				url: '/signup',
 				templateUrl: 'views/signup.html',
-<<<<<<< HEAD
-				controller: signupCtrl,
-=======
-				controller: 'forgotCtrl'
->>>>>>> a85a8f8c29a791527a9a81eb7258de6bb912d68c
+				controller: 'signupCtrl',
+
 			})
 
 			.state('manage', {

@@ -13,7 +13,7 @@
 
 		$scope.formData = {};
 
-		$scope.signup = signup;
+		$scope.title = "signup";
 
 		// function signup () {
 		// 	console.log('logging in');
