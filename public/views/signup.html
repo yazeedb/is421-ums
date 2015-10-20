@@ -1,10 +1,15 @@
 <div class="container">
 
-	<form id="signupForm" class="col-sm-8 center-div">
+	<form id="signupForm" name="signupForm" class="col-sm-8 center-div">
 		<h1>{{title}}</h1>
 		<div class="col-sm-6">
 			<label for="firstname">First Name</label>
-			<input id="firstname"  type="text" class="form-control" aria-describedby="basic-addon1">
+			<input ng-model='firstName' name='firstName' type="text" class="form-control" required> 
+			<div class="alert alert-danger" role="alert" ng-if="signupForm.firstName.$touched && !firstName"><span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+				Please enter an first name.
+			</div>
+			
+
 
 			<label for="lastname">LastName</label>
 			<input id="lastname"  type="text" class="form-control" aria-describedby="basic-addon1">
@@ -47,6 +52,8 @@
 		    </label>
 		   </div> -->
 		</br>
-		<button class="btn btn-block btn-primary" ng-click="signUp()">Submit</button>
+		<button type="submit" class="btn btn-block btn-primary" ng-click="signUp()">Submit</button>
 	</form>
+
+
 </div>

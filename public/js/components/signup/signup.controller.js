@@ -8,10 +8,11 @@
 
 	function signupCtrl ($scope) {
 
-			console.log("signup controller injected");
+		console.log("signup controller injected");
 
+		//$scope.formData = {};
 
-		$scope.formData = {};
+		console.log($scope.signupForm);
 
 		$scope.title = "signup";
 

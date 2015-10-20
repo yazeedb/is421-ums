@@ -101,3 +101,7 @@ div#forgot-links a {
 form#signupForm input {
   margin-bottom: 10px;
 }
+.alert {
+  margin-bottom: 5px !important;
+  padding: 5px;
+}
