@@ -3,9 +3,9 @@
 		.module('login')
 		.controller('loginCtrl', loginCtrl);
 
-	loginCtrl.$inject = ['$scope', 'loginService'];
+	loginCtrl.$inject = ['$scope', 'loginService','$state'];
 
-	function loginCtrl ($scope, loginService) {
+	function loginCtrl ($scope, loginService, $state) {
 		$scope.formData = {};
 
 		$scope.login = login;
@@ -16,6 +16,9 @@
 				.then(function (res) {
 					console.log(res);
 				});
-		}
+
+			//redirect on login success
+			$state.go('manage');
+		}//end login
 	}
 }());

@@ -12,10 +12,26 @@
 </div>
 
 <div class="panel-body">
-	<input type="text" class="form-control" placeholder="Your email">
-	<div>
-		<button class="btn btn-block btn-primary" >Submit</button>
+<form name="formData">
+	<input name="emailField" ng-model="formData.email"   class="form-control" placeholder="Your email" required >
+<!-- 
+	<h1>{{formData.email}}</h1> -->
+
+	<!-- <div class="alert alert-danger" role="alert" ng-show="formData.emailField.$error.required">
+		Please Enter a Username
+	</div> -->
+
+	<div class="alert alert-danger" role="alert" ng-show="formData.emailField.$touched && !formData.email">
+		Please enter an email
 	</div>
+	
+			{{formData.errors}}
+	<div>
+		<button class="btn btn-block btn-primary" ng-click="forgotUsername()">Submit</button>
+	</div>
+
+</form>
+
 </div>
 
 </div>

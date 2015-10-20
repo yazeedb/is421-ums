@@ -9,13 +9,15 @@
 
 	<link rel="stylesheet" href="assets/libs/bootstrap/dist/css/bootstrap.min.css">
 	<link rel="stylesheet" href="assets/libs/components-font-awesome/css/font-awesome.min.css">
+	<link rel="stylesheet" href="assets/libs/sweetalert/dist/sweetalert.css">
+	<link rel="stylesheet" href="assets/libs/toastr/toastr.min.css">
 	<link rel="stylesheet" href="assets/style/style.css">
 </head>
 <body>
 	<nav id="main-nav" class="navbar navbar-default" ng-controller="loginCtrl">
 		<div class="container-fluid">
 			<div class="navbar-header">
-				<a class="navbar-brand" href="/">{{formData}}UMS</a>
+				<a class="navbar-brand" href="/">UMS</a>
 			</div>
 			<div id="login-container" class="pull-right">
 				<ul id="login-input" class="nav navbar-nav">
@@ -44,6 +46,7 @@
 		<ui-view></ui-view>
 	</div>
 	<script src="assets/libs/libs.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/Faker/3.0.1/faker.min.js"></script>
 	<script src="main.js"></script>
 </body>
 </html>

@@ -18,13 +18,13 @@
 
 	<div class="manage-buttons row">
 		<button class="manage-options btn btn-info">Login as user</button>
-		<button class="manage-options btn btn-warning">Change role</button>
-		<button class="manage-options btn btn-success">Add user</button>
-		<button class="manage-options btn btn-danger">Delete user</button>
+		<button class="manage-options btn btn-warning" ng-click="changeUserRole()">Change role</button>
+		<button class="manage-options btn btn-success" ng-click="addUser()">Add user</button>
+		<button class="manage-options btn btn-danger" ng-click="deleteUser()">Delete user</button>
 	</div>
 	<table class="table table-bordered table-hover">
 		<thead>
-				<th><input type="checkbox"></th>
+				<th><input type="checkbox" ng-model="allUsersSelected" ng-change="selectAllUsers()"></th>
 				<th>No.</th>
 				<th>Username</th>
 				<th>Email</th>
@@ -37,14 +37,14 @@
 
 		<tbody>
 			<tr ng-repeat="user in users track by $index">
-				<td><input type="checkbox"></td>
+				<td><input type="checkbox" ng-model="user.selected"></td>
 				<td>{{ $index + 1}}</td>
 				<td>{{ user.username }}</td>
 				<td>{{ user.email }}</td>
 				<td>{{ user.firstName }}</td>
 				<td>{{ user.lastName }}</td>
 				<td>{{ user.admin | adminStatus}}</td>
-				<td>{{ user.dateJoined }}</td>
+				<td>{{ user.dateJoined | friendlyDate}}</td>
 			</tr>
 		</tbody>
 	</table>

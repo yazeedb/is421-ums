@@ -15,28 +15,35 @@
 			.state('signup', {
 				url: '/signup',
 				templateUrl: 'views/signup.html',
+<<<<<<< HEAD
 				controller: signupCtrl,
+=======
+				controller: 'forgotCtrl'
+>>>>>>> a85a8f8c29a791527a9a81eb7258de6bb912d68c
 			})
 
 			.state('manage', {
-				url: '/manage',
+				url: '/admin',
 				templateUrl: 'views/manage.html',
 				controller: 'manageCtrl'
 			})
 
 			.state('forgotUsername', {
 				url: '/forgotUsername',
-				templateUrl: 'views/forgotUsername.html'
+				templateUrl: 'views/forgotUsername.html',
+				controller: 'forgotCtrl'
 			})
 
 			.state('forgotUsernameSuccess', {
 				url: '/forgotUsernameSuccess',
 				templateUrl: 'views/forgotUsernameSuccess.html'
+				
 			})
 
 			.state('forgotPassword', {
 				url: '/forgotPassword',
-				templateUrl: 'views/forgotPassword.html'
+				templateUrl: 'views/forgotPassword.html',
+				controller: 'forgotCtrl'
 			})
 
 			.state('forgotPasswordSuccess', {
@@ -54,6 +61,7 @@
 				templateUrl: 'views/resetPasswordSuccess.html'
 			});
 
+		$urlRouterProvider.otherwise('/');
 		$locationProvider.html5Mode(true);
 	}
 }());
