@@ -6,7 +6,22 @@ function users (app, express) {
 	var usersApi = express.Router();
 
 	usersApi.get('/', function (req, res) {
-		dbHelper();
+		var getUsers = dbHelper('SELECT * FROM is421_users');
+
+		getUsers._callback = function (err, rows) {
+			if (err)
+				throw err;
+
+			for (var i = 0; i < rows.length; i++) {
+				delete rows[i].password;
+			}
+
+			res.json(rows);
+		};
+	});
+
+	usersApi.post('/', function (req, res) {
+
 	});
 
 	//crud on single user
@@ -14,7 +29,19 @@ function users (app, express) {
 
 		// get the user with that id
 		.get(function (req, res) {
-			
+			var uid = parseInt(req.params.uid);
+			var query = 'SELECT * FROM is421_users WHERE uid = ' + uid;
+
+			var getUser = dbHelper(query);
+
+			getUser._callback = function (err, rows) {
+				if (err)
+					throw err;
+
+				delete rows[0].password;
+
+				res.json(rows);
+			}
 		})
 
 		// update the user with this id
@@ -26,8 +53,6 @@ function users (app, express) {
 		.delete(function (req, res) {
 
 		});
-
-
 
 
 	return usersApi;
