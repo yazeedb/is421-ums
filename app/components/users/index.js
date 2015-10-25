@@ -12,10 +12,6 @@ function users (app, express) {
 			if (err)
 				throw err;
 
-			for (var i = 0; i < rows.length; i++) {
-				delete rows[i].password;
-			}
-
 			res.json(rows);
 		};
 	});
@@ -37,9 +33,7 @@ function users (app, express) {
 			getUser._callback = function (err, rows) {
 				if (err)
 					throw err;
-
-				delete rows[0].password;
-
+				
 				res.json(rows);
 			}
 		})

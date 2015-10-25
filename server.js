@@ -10,6 +10,7 @@ app.use(bodyParser.json());
 
 app.use(express.static(__dirname + '/public'));
 
+app.use('/api/auth', apiRoutes.authApi(app, express));
 app.use('/api/users', apiRoutes.usersApi(app, express));
 
 app.get('*', function (req, res) {
