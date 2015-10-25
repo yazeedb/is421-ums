@@ -14,7 +14,7 @@ function users (app, express) {
 
 		// get the user with that id
 		.get(function (req, res) {
-			//sql query or service
+			
 		})
 
 		// update the user with this id
