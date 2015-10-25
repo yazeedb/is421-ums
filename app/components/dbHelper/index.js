@@ -4,11 +4,7 @@ var config = require('../../../config.js');
 var mysql = require('mysql');
 
 function dbHelper () {
-	var connection = mysql.createConnection({
-		user: 'root',
-		password: 'root',
-		port: 8889
-	});
+	var connection = mysql.createConnection(config.dbInfo);
 
 	connection.connect(function (err) {
 		if (err) {
@@ -16,6 +12,11 @@ function dbHelper () {
 			throw err;
 		}
 		
-		console.log('connect to db');	
+		connection.query('SELECT * FROM is421_users', function (err, rows) {
+			if (err)
+				throw err;
+
+			console.log(rows);
+		});
 	});
 }
