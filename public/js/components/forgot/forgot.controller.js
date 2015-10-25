@@ -36,9 +36,6 @@
 			$state.go('forgotUsernameSuccess');
 		} //end forgotUsername
 
-
-
-
 	} //end forgot ctrl
 
 }());
