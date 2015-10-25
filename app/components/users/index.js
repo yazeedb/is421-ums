@@ -1,13 +1,12 @@
 module.exports = users;
 
+var dbHelper = require('../dbHelper');
+
 function users (app, express) {
 	var usersApi = express.Router();
 
 	usersApi.get('/', function (req, res) {
-		res.json({
-			success: true,
-			message: 'GET all users'
-		});
+		dbHelper();
 	});
 
 	//crud on single user
