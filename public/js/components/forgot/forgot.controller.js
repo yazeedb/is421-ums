@@ -5,39 +5,35 @@
 
 	forgotCtrl.$inject = ['$scope','$state','$http'];
 
-	function forgotCtrl ($scope, $state,$http) {
-		//make sure its injecting	
-		console.log("forgot controller injected");
-
+	function forgotCtrl ($scope, $state, $http) {
 		$scope.formData = {};
 
 		$scope.forgotUsername = function () {
 
 			//min length 8 chars
-			if($scope.formData.email){
+			if ($scope.formData.email) {
 				$state.go('forgotUsernameSuccess');
-			}
-			else{
+			} else {
 
 			}
 		} //end forgotUsername
 
 		$scope.forgotPassword = function () {
-
 			//min length 8 chars
-			if($scope.formData.username){
-				$state.go('forgotPasswordSuccess');
-			}
-			else{
+			if ($scope.formData.username){
+				toastr.success('Confirmation email sent. You will be redirected in 3 seconds');
 
+				setTimeout(function () {
+					$state.go('home');
+				}, 3000);
+			} else {
+				console.log('no username');
 			}
-		} //end forgotUsername
+		} //end forgotPassword
 
 
 		$scope.signUp = function () {
-
 			$state.go('forgotUsernameSuccess');
-			
 		} //end forgotUsername
 
 
