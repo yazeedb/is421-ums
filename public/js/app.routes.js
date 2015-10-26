@@ -9,14 +9,14 @@
 		$stateProvider
 			.state('home', {
 				url: '/',
-				templateUrl: 'views/home.html'
+				templateUrl: 'views/home.html',
+				controller: 'loginCtrl'
 			})
 
 			.state('signup', {
 				url: '/signup',
 				templateUrl: 'views/signup.html',
-				controller: 'signupCtrl',
-
+				controller: 'signupCtrl'
 			})
 
 			.state('manage', {

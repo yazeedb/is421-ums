@@ -7,18 +7,16 @@
 
 	function loginCtrl ($scope, loginService, $state) {
 		$scope.formData = {};
-
 		$scope.login = login;
 
 		function login () {
-			console.log('logging in');
 			loginService.login($scope.formData)
 				.then(function (res) {
 					console.log(res);
+					if (res.status === 200) {
+						$state.go('manage');
+					}
 				});
-
-			//redirect on login success
-			$state.go('manage');
-		}//end login
+		}
 	}
 }());

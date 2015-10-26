@@ -12,10 +12,12 @@ function auth (app, express) {
 
 		dbHelper(query)._callback = function (err, rows) {
 			if (err)
-				throw err;
+				return res.send(err);
+
+			console.log(rows);
 
 			if (!rows.length) {
-				res.status(403).send({
+				return res.status(403).send({
 					success: false,
 					message: 'Username not found'
 				});
@@ -23,13 +25,13 @@ function auth (app, express) {
 				var user = rows[0];
 
 				if (req.body.password !== user.password) {
-					res.status(403).send({
+					return res.status(403).send({
 						success: false,
 						message: 'Incorrect password'
 					});
+				} else {
+					return res.json(user);
 				}
-
-				res.json(user);
 			}
 		}
 	});
