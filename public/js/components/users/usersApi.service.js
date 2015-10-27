@@ -26,11 +26,11 @@
 		}
 
 		function postUser (userData) {
-			return $http.post(usersApiPath, userData);
+			return $http.post(usersApiPath +'new', userData);
 		}
 
 		function putUser (userData) {
-			return $http.put(usersApiPath, userData);
+			return $http.put(usersApiPath + 'update', userData);
 		}
 
 		function deleteUser (userId) {
