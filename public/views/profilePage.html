@@ -1,1 +1,18 @@
-<div class="container">hello profile</div>
+{{currentUser}}
+
+<div class="user-card panel panel-default" ng-show="currentUser">
+	<div class="panel-heading">
+		<h3 class="panel-title">
+			{{ currentUser.username }}
+			<span class="admin-label badge" ng-if="currentUser.admin">Admin</span>
+		</h3>
+	</div>									
+	<div class="list-group">
+		<div class="user-attr list-group-item">
+			{{ currentUser.firstname }}
+		</div>
+		<div class="user-attr list-group-item">
+			{{ currentUser.lastname }}
+		</div>
+	</div>
+</div>	
