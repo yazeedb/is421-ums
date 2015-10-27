@@ -34,7 +34,13 @@
 			.state('manage', {
 				url: '/admin',
 				templateUrl: 'views/manage.html',
-				controller: 'manageCtrl'
+				controller: 'manageCtrl',
+				resolve: {
+					allUsers: ['usersApi', function (usersApi) {
+						console.log('resolving');
+						return usersApi.getUser();
+					}]
+				}
 			})
 
 			.state('forgotUsername', {

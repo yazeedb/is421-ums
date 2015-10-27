@@ -3,10 +3,10 @@
 		.module('admin')
 		.controller('manageCtrl', manageCtrl);
 
-		manageCtrl.$inject = ['$scope', 'fakeUsers', 'adminControls', '$uibModal', '$http'];
+		manageCtrl.$inject = ['$scope', 'fakeUsers', 'adminControls', '$uibModal', '$http', 'allUsers'];
 
-	function manageCtrl ($scope, fakeUsers, adminControls, $uibModal, $http) {
-		$scope.users = [];
+	function manageCtrl ($scope, fakeUsers, adminControls, $uibModal, $http, allUsers) {
+		$scope.users = allUsers.data;
 		$scope.newUser = {};
 
 		$scope.selectAllUsers = selectAllUsers;
@@ -14,10 +14,6 @@
 		$scope.saveUser = saveUser;
 		$scope.changeUserRole = changeUserRole;
 		$scope.deleteUser = deleteUser;
-
-		for (var i = 0; i < 10; i++) {
-			$scope.users.push(fakeUsers.makeUser());
-		}
 
 		function selectAllUsers () {
 			adminControls.actionOnUsers($scope.users, function (user) {
