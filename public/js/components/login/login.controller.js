@@ -14,7 +14,8 @@
 				.then(function (res) {
 					if (res.status === 200) {
 						authFactory.setToken(res.data.token);
-						$state.go('manage');
+
+						$state.go('profilePage.user', {username: $scope.formData.username});
 					}
 				});
 		}

@@ -20,7 +20,13 @@
 			})
 
 			.state('profilePage', {
-				url: '/users/{username}',
+				abstract: true,
+				url: '/users',
+				template: '<ui-view></ui-view>'
+			})
+
+			.state('profilePage.user', {
+				url: '/{username}',
 				templateUrl: 'views/profilePage.html',
 				controller: 'profilePage'
 			})
