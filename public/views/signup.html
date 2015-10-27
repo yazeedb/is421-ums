@@ -4,7 +4,7 @@
 		<h1>{{title}}</h1>
 		<div class="col-sm-6">
 			<label for="firstname">First Name</label>
-			<input ng-model='firstName' name='firstName' type="text" class="form-control" required> 
+			<input ng-model='form.firstName' name='firstName' type="text" class="form-control" required> 
 			<div class="alert alert-danger" role="alert" ng-if="signupForm.firstName.$touched && !firstName"><span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
 				Please enter a first name.
 			</div>
@@ -12,25 +12,25 @@
 
 
 			<label for="lastname">LastName</label>
-			<input ng-model='lastName' id="lastName" name="lastName"  type="text" class="form-control" aria-describedby="basic-addon1">
+			<input ng-model='form.lastName' id="lastName" name="lastName"  type="text" class="form-control" aria-describedby="basic-addon1">
 			<div class="alert alert-danger" role="alert" ng-if="signupForm.lastName.$touched && !lastName"><span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
 				Please enter a last name.
 			</div>
 
 			<label for="email">Email</label>
-			<input ng-model='email' id="email" name="email" type="email" class="form-control" aria-describedby="basic-addon1">
+			<input ng-model='form.email' id="email" name="email" type="email" class="form-control" aria-describedby="basic-addon1">
 			<div class="alert alert-danger" role="alert" ng-if="signupForm.email.$touched && !email"><span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
 				Please enter a valid email.
 			</div>
 
 			<label for="password">Password</label>
-			<input id="password" name="password" ng-model="password" type="password" class="form-control" aria-describedby="basic-addon1" ng-minlength="6" placeholder="6 - 12 characters" >
+			<input ng-model='form.password' id="password" name="password" ng-model="password" type="password" class="form-control" aria-describedby="basic-addon1" ng-minlength="6" placeholder="6 - 12 characters" >
 			<div class="alert alert-danger" role="alert" ng-if="signupForm.password.$touched && !password"><span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
 				Please enter a password.
 			</div>
 
 			<label for="confirmPassword">Confirm Password</label>
-			<input id="confirmPassword" name="confirmPassword" ng-model="confirmPassword" type="password" class="form-control" aria-describedby="basic-addon1" ng-minlength="6" placeholder="6 - 12 characters" >
+			<input ng-model='form.confirmPassword' id="confirmPassword" name="confirmPassword" ng-model="confirmPassword" type="password" class="form-control" aria-describedby="basic-addon1" ng-minlength="6" placeholder="6 - 12 characters" >
 			<div class="alert alert-danger" role="alert" ng-if="signupForm.confirmPassword.$touched && !confirmPassword"><span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
 				Please enter a password.
 			</div>
@@ -55,7 +55,7 @@
 
 		<div >
 			<label>Date of Birth</label>
-			<input name="dob"  ng-model="dob"  type="date" class="form-control" id="exampleInputDOB1">
+			<input name="dob"  ng-model="form.dob"  type="date" class="form-control" id="exampleInputDOB1">
 		</div>
 		<div class="alert alert-danger" role="alert" ng-if="signupForm.dob.$touched && !dob"><span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
 				Please enter a date of birth.
@@ -70,7 +70,7 @@
 
 			
 			<label for="zipcode">zipcode</label>
-			<input id="zipcode" name="zipcode" ng-model="zipcode"  type="text" class="form-control" aria-describedby="basic-addon1" ng-minlength="5">
+			<input id="address" name="address" ng-model="form.address"  type="text" class="form-control" aria-describedby="basic-addon1" ng-minlength="5">
 
 			<div class="alert alert-danger" role="alert" ng-if="signupForm.zipcode.$touched && !zipcode"><span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
 				Please enter a valid zipcode.

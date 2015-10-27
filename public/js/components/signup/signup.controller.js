@@ -18,6 +18,8 @@
 
 		$scope.passwordErrors = false;
 
+		$scope.form = {};
+
 		// function signup () {
 		// 	console.log('logging in');
 		// 	signupService.signup($scope.formData)
