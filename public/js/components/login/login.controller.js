@@ -12,7 +12,6 @@
 		function login () {
 			loginService.login($scope.formData)
 				.then(function (res) {
-					console.log(res);
 					if (res.status === 200) {
 						authFactory.setToken(res.data.token);
 						$state.go('manage');
