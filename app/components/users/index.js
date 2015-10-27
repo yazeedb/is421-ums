@@ -23,16 +23,28 @@ function users (app, express) {
 	});
 
 // add a user
-	usersApi.put('/new', function (req, res) {
+	usersApi.post('/new', function (req, res) {
 
 			//get body data
-			var form = {};
-			form.username = req.body.username;
-			form.updateField = req.body.updateField;
-			form.updateValue = req.body.updateValue;
+				//gen info
+				var form = {};
+				form.firstname = req.body.firstname;
+				form.lastname = req.body.lastname;
+				form.email = req.body.email;
+				form.dob = req.body.dob;
+				form.gender = req.body.gender;
+				form.address = req.body.address;
+				//auth info
+				form.username = req.body.username;
+				form.password = req.body.password;
+				form.role = req.body.role;
+
+			
 
 			//form the query
-			var query = 'UPDATE is421_users SET ' + form.updateField + '=' +  connection.escape(form.updateValue)  + ' WHERE username = ' + connection.escape(form.username);
+			var query = 'INSERT INTO is421_users (username,email,firstname,lastname,gender,dob,address,role,date_joined) VALUES(' + connection.escape(form.username) + ',' + connection.escape(form.email) + ',' + connection.escape(form.firstname) + ',' + connection.escape(form.lastname) + ',' + connection.escape(form.gender) + ',' + connection.escape(form.dob) + ',' + connection.escape(form.address) + ',' + connection.escape(form.role) + ',' + connection.escape(form.date_joined) + ')';
+			
+			//res.send(query);
 
 			//execute query
 			connection.query(query, function(err, rows, fields) {
@@ -42,7 +54,7 @@ function users (app, express) {
 				res.json(rows);
 			});
 			
-	}); //end put addUser
+	}); //end post addUser
 
 	// update a user
 	usersApi.put('/update', function (req, res) {
