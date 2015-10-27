@@ -23,7 +23,7 @@ function users (app, express) {
 	});
 
 // add a user
-	usersApi.post('/', function (req, res) {
+	usersApi.post('/new', function (req, res) {
 
 			//get body data
 				//gen info
@@ -59,7 +59,7 @@ function users (app, express) {
 							throw err;
 
 						else res.json(rows);
-					});
+					})
 					
 				}
 					
