@@ -42,33 +42,26 @@ function users (app, express) {
 			
 	}); //end put updateUser 
 
+
 	//crud on single user
-	// usersApi.route('/:uid')
+	usersApi.route('/:username')
 
-	// 	// get the user with that id
-	// 	.get(function (req, res) {
-	// 		var uid = parseInt(req.params.uid);
-	// 		var query = 'SELECT * FROM is421_users WHERE uid = ' + uid;
+		// get the user with that id
+		.get(function (req, res) {
+			var username = req.params.username;
+			var query = 'SELECT * FROM is421_users WHERE username = "' + username + '"';
 
-	// 		var getUser = dbHelper(query);
+		//execute query
+			var getUser = dbHelper(query);
 
-	// 		getUser._callback = function (err, rows) {
-	// 			if (err)
-	// 				throw err;
+			getUser._callback = function (err, rows) {
+				if (err)
+					throw err;
 				
-	// 			res.json(rows);
-	// 		}
-	// 	})
+				res.json(rows[0]);
+			}
+		})//end get single user
 
-	// 	// update the user with this id
-	// 	.put(function (req, res) {
-
-	// 	})
-
-	// 	// delete the user with this id
-	// 	.delete(function (req, res) {
-
-	// 	});
 
 
 	return usersApi;

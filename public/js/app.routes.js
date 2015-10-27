@@ -5,7 +5,7 @@
 
 	routeConfig.$inject = ['$locationProvider', '$urlRouterProvider', '$stateProvider'];
 
-	function routeConfig ($locationProvider, $urlRouterProvider, $stateProvider) {
+	function routeConfig ($locationProvider, $urlRouterProvider, $stateProvider, $route) {
 		$stateProvider
 			.state('home', {
 				url: '/',
@@ -17,6 +17,12 @@
 				url: '/signup',
 				templateUrl: 'views/signup.html',
 				controller: 'signupCtrl'
+			})
+
+			.state('profilePage', {
+				url: '/users/{username}',
+				templateUrl: 'views/profilePage.html',
+				controller: 'profilePage'
 			})
 
 			.state('manage', {
