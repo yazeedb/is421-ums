@@ -1,11 +1,11 @@
 (function () {
 	angular
-		.module('httpInterceptorModule', [])
+		.module('httpInterceptorModule', ['auth'])
 		.factory('interceptHttp', interceptHttp);
 
-	interceptHttp.$inject = ['$window', '$location'];
+	interceptHttp.$inject = ['$window', '$location', 'authFactory'];
 
-	function interceptHttp ($window, $location) {
+	function interceptHttp ($window, $location, authFactory) {
 		var interceptFactory = {
 			request: request,
 			response: response,
@@ -13,8 +13,10 @@
 		};
 
 		function request (config) {
-			/*if (token)
-				config.headers['Authorization'] = 'JWT ' + token;*/
+			var token = authFactory.getToken();
+
+			if (token)
+				config.headers['Authorization'] = 'JWT ' + token;
 
 			return config;
 		}
@@ -27,6 +29,7 @@
 		function responseError (res) {
 			if (res.status == 401 || res.status == 403) {
 				toastr.error(res.data.message);
+				authFactory.removeToken();
 				$location.path('/');
 			}
 

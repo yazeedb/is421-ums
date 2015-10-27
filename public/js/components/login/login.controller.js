@@ -3,9 +3,9 @@
 		.module('login')
 		.controller('loginCtrl', loginCtrl);
 
-	loginCtrl.$inject = ['$scope', 'loginService','$state'];
+	loginCtrl.$inject = ['$scope', 'loginService', '$state', 'authFactory'];
 
-	function loginCtrl ($scope, loginService, $state) {
+	function loginCtrl ($scope, loginService, $state, authFactory) {
 		$scope.formData = {};
 		$scope.login = login;
 
@@ -14,6 +14,7 @@
 				.then(function (res) {
 					console.log(res);
 					if (res.status === 200) {
+						authFactory.setToken(res.data.token);
 						$state.go('manage');
 					}
 				});

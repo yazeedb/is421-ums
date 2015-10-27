@@ -1,6 +1,6 @@
 (function () {
 	angular
-		.module('ums', ['ui.router', 'httpInterceptorModule', 'users', 'admin', 'login','forgot','signup'])
+		.module('ums', ['ui.router', 'httpInterceptorModule', 'auth', 'users', 'admin', 'login','forgot','signup'])
 
 		.config(['$httpProvider', httpConfig]);
 

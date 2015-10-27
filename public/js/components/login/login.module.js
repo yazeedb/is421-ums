@@ -1,4 +1,4 @@
 (function () {
 	angular
-		.module('login', []);
+		.module('login', ['auth']);
 }());
