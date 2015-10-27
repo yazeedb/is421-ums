@@ -6,12 +6,10 @@
 	profilePage.$inject = ['$scope', '$stateParams', 'usersApi'];
 
 	function profilePage ($scope, $stateParams, usersApi) {
-		console.log($scope);
-		console.log($stateParams);
-
 		usersApi.getUser($stateParams.username)
 		.then(function (res) {
-			
+			$scope.currentUser = res.data;
+			console.log($scope.currentUser);
 		});
 	}
 }());
