@@ -3,9 +3,9 @@
 		.module('auth', [])
 		.factory('authFactory', authFactory);
 
-	authFactory.$inject = ['$window'];
+	authFactory.$inject = ['$window', '$rootScope'];
 
-	function authFactory ($window) {
+	function authFactory ($window, $rootScope) {
 		var factory = {
 			getToken: getToken,
 			setToken: setToken,

@@ -14,12 +14,16 @@
 	<link rel="stylesheet" href="assets/style/style.css">
 </head>
 <body>
-	<nav id="main-nav" class="navbar navbar-default">
+	<nav id="main-nav" class="navbar navbar-default" ng-controller="navCtrl">
 		<div class="container-fluid">
 			<div class="navbar-header">
 				<a class="navbar-brand" href="/">UMS</a>
 			</div>
+			<div class="pull-right">
+				<a ng-click="logout()" ng-if="loggedIn">Log out</a>
+			</div>
 		</div>
+		{{test}}
 	</nav>
 	<div class="container-fluid">
 		<ui-view></ui-view>
