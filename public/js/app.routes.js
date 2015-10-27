@@ -19,6 +19,11 @@
 				controller: 'signupCtrl'
 			})
 
+			.state('profilePage', {
+				url: '/users/{username}',
+				controller: 'profilePage'
+			})
+
 			.state('manage', {
 				url: '/admin',
 				templateUrl: 'views/manage.html',

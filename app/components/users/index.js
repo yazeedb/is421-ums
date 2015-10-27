@@ -21,12 +21,12 @@ function users (app, express) {
 	});
 
 	//crud on single user
-	usersApi.route('/:uid')
+	usersApi.route('/:username')
 
 		// get the user with that id
 		.get(function (req, res) {
-			var uid = parseInt(req.params.uid);
-			var query = 'SELECT * FROM is421_users WHERE uid = ' + uid;
+			var username = req.params.username;
+			var query = 'SELECT * FROM is421_users WHERE username = "' + username + '"';
 
 			var getUser = dbHelper(query);
 
@@ -34,7 +34,7 @@ function users (app, express) {
 				if (err)
 					throw err;
 				
-				res.json(rows);
+				res.json(rows[0]);
 			}
 		})
 
