@@ -1,6 +1,7 @@
 module.exports = auth;
 
 var dbHelper = require('../dbHelper');
+var jwt = require('jsonwebtoken');
 
 function auth (app, express) {
 	var authApi = express.Router();
@@ -28,10 +29,16 @@ function auth (app, express) {
 					message: 'Incorrect password'
 				});
 			}
+
+			var payload = {	username: user.username };
+			var secret = require('../../../config.js').secret;
+			var options = { expiresin: 86400 };
+
+			var token = jwt.sign(payload, secret, options);
 			
 			return res.json({
 				success: true,
-				user: user
+				token: token
 			});
 		}
 	});
