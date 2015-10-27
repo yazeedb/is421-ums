@@ -1,18 +1,42 @@
 {{currentUser}}
+<div class="container">
+	<div class="row">
+		<div class="col-lg-3 col-sm-6">
 
-<div class="user-card panel panel-default" ng-show="currentUser">
-	<div class="panel-heading">
-		<h3 class="panel-title">
-			{{ currentUser.username }}
-			<span class="admin-label badge" ng-if="currentUser.admin">Admin</span>
-		</h3>
-	</div>									
-	<div class="list-group">
-		<div class="user-attr list-group-item">
-			{{ currentUser.firstname }}
-		</div>
-		<div class="user-attr list-group-item">
-			{{ currentUser.lastname }}
-		</div>
+            <div class="card hovercard">
+                <div class="cardheader">
+
+                </div>
+                <div class="info">
+                	<div class="user-role">
+                		{{ currentUser.role }}
+                	</div>
+                    <div class="title">
+                        {{ currentUser.username }}
+                    </div>
+                    <div class="desc">{{ currentUser.firstname + ' ' + currentUser.lastname }}</div>
+                    <div class="desc"></div>
+                    <div class="desc">{{ currentUser.address }}</div>
+                </div>
+                <div class="bottom">
+                    <!-- <a class="btn btn-primary btn-twitter btn-sm" href="https://twitter.com/webmaniac">
+                        <i class="fa fa-twitter"></i>
+                    </a>
+                    <a class="btn btn-danger btn-sm" rel="publisher"
+                       href="https://plus.google.com/+ahmshahnuralam">
+                        <i class="fa fa-google-plus"></i>
+                    </a>
+                    <a class="btn btn-primary btn-sm" rel="publisher"
+                       href="https://plus.google.com/shahnuralam">
+                        <i class="fa fa-facebook"></i>
+                    </a>
+                    <a class="btn btn-warning btn-sm" rel="publisher" href="https://plus.google.com/shahnuralam">
+                        <i class="fa fa-behance"></i>
+                    </a> -->
+                </div>
+            </div>
+
+        </div>
+
 	</div>
-</div>	
+</div>
