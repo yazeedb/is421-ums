@@ -40,9 +40,6 @@ function users (app, express) {
 
 		// update the user with this id
 		.put(function (req, res) {
-			var uid = parseInt(req.params.uid);
-			var query = 'SELECT * FROM is421_users WHERE uid = ' + uid;
-			
 
 		})
 

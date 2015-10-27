@@ -2,6 +2,7 @@ module.exports = auth;
 
 var dbHelper = require('../dbHelper');
 var jwt = require('jsonwebtoken');
+var passportJwt = require('../auth/jwtStrategy.js')();
 
 function auth (app, express) {
 	var authApi = express.Router();
@@ -30,17 +31,33 @@ function auth (app, express) {
 				});
 			}
 
-			var payload = {	username: user.username };
-			var secret = require('../../../config.js').secret;
-			var options = { expiresin: 86400 };
+			dbHelper('SELECT * FROM is421_users WHERE username = "' + username + '"')
+			._callback = function (err, rows) {
+				if (err)
+					return res.send(err);
 
-			var token = jwt.sign(payload, secret, options);
-			
-			return res.json({
-				success: true,
-				token: token
-			});
+				var payload = rows[0];
+				var secret = require('../../../config.js').secret;
+				var options = { expiresin: 86400 };
+				var token = jwt.sign(payload, secret, options);
+
+				return res.json({
+					success: true,
+					token: token
+				});
+			};
 		}
+	});
+
+	authApi.use(passportJwt, function (req, res, next) {
+		next();
+	});
+
+	authApi.get('/me', function (req, res) {
+		res.json({
+			success: true,
+			user: req.user
+		});
 	});
 
 	return authApi;
