@@ -24,7 +24,7 @@
 		}
 
 		function removeToken () {
-			$window.localStorage.removeItem('token');
+			$window.localStorage.clear();
 		}
 
 		return factory;

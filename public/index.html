@@ -20,10 +20,10 @@
 				<a class="navbar-brand" href="/">UMS</a>
 			</div>
 			<div class="pull-right">
+				<a href="/admin" ng-if="role === 'admin'">Admin Panel</a>
 				<a ng-click="logout()" ng-if="loggedIn">Log out</a>
 			</div>
 		</div>
-		{{test}}
 	</nav>
 	<div class="container-fluid">
 		<ui-view></ui-view>

@@ -23,7 +23,7 @@ function users (app, express) {
 	});
 
 // add a user
-	usersApi.post('/new', function (req, res) {
+	usersApi.post('/', function (req, res) {
 
 			//get body data
 				//gen info
@@ -116,12 +116,9 @@ function users (app, express) {
 	//crud on single user
 	usersApi.route('/:username')
 
-		// get the user with that id
 		.get(function (req, res) {
 			var username = req.params.username;
 			var query = 'SELECT * FROM is421_users WHERE username = "' + username + '"';
-
-		//execute query
 			var getUser = dbHelper(query);
 
 			getUser._callback = function (err, rows) {
@@ -131,8 +128,6 @@ function users (app, express) {
 				res.json(rows[0]);
 			}
 		})//end get single user
-
-
 
 	return usersApi;
 }
