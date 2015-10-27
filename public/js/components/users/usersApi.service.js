@@ -10,7 +10,8 @@
 			getUser: getUser,
 			postUser: postUser,
 			putUser: putUser,
-			deleteUser: deleteUser
+			deleteUser: deleteUser,
+			getMe: getMe
 		};
 
 		var usersApiPath = '/api/users/';
@@ -36,6 +37,10 @@
 		function deleteUser (userId) {
 			var fullApiPath = usersApiPath + userId;
 			return $http.delete(fullApiPath);
+		}
+
+		function getMe () {
+			return $http.get('/api/auth/me');
 		}
 
 		return factory;

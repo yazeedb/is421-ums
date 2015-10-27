@@ -3,9 +3,19 @@
 		.module('login')
 		.controller('loginCtrl', loginCtrl);
 
-	loginCtrl.$inject = ['$scope', 'loginService', '$state', 'authFactory'];
+	loginCtrl.$inject = ['$scope', 'loginService', '$state', 'authFactory', 'usersApi'];
 
-	function loginCtrl ($scope, loginService, $state, authFactory) {
+	function loginCtrl ($scope, loginService, $state, authFactory, usersApi) {
+		var token = authFactory.getToken();
+		if (token) {
+			usersApi.getMe()
+				.then(function (res) {
+					if (res.data.success) {
+						$state.go('profilePage.user', {username: res.data.user.username});
+					}
+				});
+		}
+
 		$scope.formData = {};
 		$scope.login = login;
 
